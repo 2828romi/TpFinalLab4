@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+
+  {
+    path: 'nav',
+    component: NavBarComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
