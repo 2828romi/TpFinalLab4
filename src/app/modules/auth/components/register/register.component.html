@@ -1,1 +1,53 @@
-<p>register works!</p>
+  <!-- 
+  <div class="register-container" >
+
+    <h2>Ingrese sus datos</h2>
+
+    <form (ngSubmit)="onSubmit(formValue)" #myForm="ngForm">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Ꙭ</span>
+        <input type="text" name="userName" [(ngModel)]="formValue.userName" required class="form-control" placeholder="User name" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+    
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping"> @ </span>
+        <input type="text" name="email" [(ngModel)]="formValue.email" required class="form-control" placeholder="email" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+    
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Ꚙ</span>
+        <input type="text" name="password" [(ngModel)]="formValue.password" required class="form-control" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <button type="submit" class="register-button">Registrarse</button>
+    </form>
+
+</div>
+-->
+
+
+<div class="register-container" >
+
+    <h2>Ingrese sus datos</h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Ꙭ</span>
+        <input type="text" formControlName="userName" class="form-control" placeholder="User name" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+    
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping"> @ </span>
+        <input type="text" formControlName="email" class="form-control" placeholder="email" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+    
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Ꚙ</span>
+        <input type="text" formControlName="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <button type="submit" class="register-button">Registrarse</button>
+
+    </form>
+
+</div>
+
+

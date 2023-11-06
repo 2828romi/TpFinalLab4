@@ -1,0 +1,29 @@
+.register-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    margin: 15rem 10rem;
+}
+
+h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 2rem;
+}
+
+
+.register-button{
+    font-weight: bold;
+    background-color:#DC9732 ;
+    color:antiquewhite;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
