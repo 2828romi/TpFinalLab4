@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { Error404Component } from './shared/error404/error404.component';
 
 
 
@@ -13,6 +14,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     AppComponent,
     NavBarComponent,
     FooterComponent,
+    Error404Component,
   
   ],
   imports: [
