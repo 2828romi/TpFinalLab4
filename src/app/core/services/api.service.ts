@@ -15,6 +15,7 @@ export class ApiService {
 
 public getUserToAuth(email:string, password: string): Observable<User[]>{
   return this.http.get<User[]>(`${this.baseURL}/users?email=${email}&password=${password}`);
+
 }
 
 // transforma la rta de la api en un usuario
@@ -30,4 +31,18 @@ public getUserNameById(id:number): Observable<string|null>{
 public addUser(user: User): Observable<User> {
   return this.http.post<User>(`${this.baseURL}/user`, user);
 }
+
+
+private urlApi = "https://api.spoonacular.com";
+//2dbadc99b6614671a501ba30279bf4e0
+//391966feb6814c65bac7d599129dde32
+  private apiKey = "apiKey=391966feb6814c65bac7d599129dde32";
+
+  public getRecipeById(id: number): Observable<any>{
+    return this.http.get<any>(this.urlApi + `/recipes/${id}/information?` + this.apiKey);
+  }
+
+  public getRecipeByName(name: string): Observable<any>{
+    return this.http.get<any>(this.urlApi + `/recipes/complexSearch?query=${name}&` + this.apiKey);
+  }
 }
