@@ -1,0 +1,17 @@
+<p>recipe-page works!</p>
+<div *ngFor = "let item of data">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+    <div class="card h-100 ">
+        <img src="{{item.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <a href="{{item.sourceUrl}} " target="_blank">Complete Recipe+</a>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
