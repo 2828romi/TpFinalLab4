@@ -8,10 +8,6 @@ import { RecipeSearchComponent } from './modules/recipe/components/recipe-search
 const routes: Routes = [
 
   {
-    path: 'nav-bar',
-    component: NavBarComponent
-  },
-  {
     path:'landing',
     component: LandingPageComponent,
     loadChildren:()=> import("./modules/landing/landing.module").then(m => m.LandingModule)  

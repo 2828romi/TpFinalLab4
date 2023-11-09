@@ -1,40 +1,41 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand nav" href="#">
-        <img src="./assets/images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-        Chef en la despensa
-      </a>
-     
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item" *ngIf="!isLoggedIn">
-            <a class="nav-link" href="#">Recipes</a>
-          </li>
-          <li class="nav-item" *ngIf="isLoggedIn">
-            <a class="nav-link" href="#">My Recipes</a>
-          </li>
-          <li class="nav-item" *ngIf="isLoggedIn">
-            <a class="nav-link" href="#">Add a Recipe</a>
-          </li>
-          <li class="nav-item" *ngIf="isLoggedIn">
-            <a class="nav-link" href="#">My Favorite Recipes</a>
-          </li>
-        </ul>
-      </div>
-  
-     <div *ngIf="!isLoggedIn">
-        <button class="btn nav-btn">Login</button>
-      </div>
-      <div *ngIf="isLoggedIn" class="d-flex align-items-center">
-        <i class="user-icon"></i>
-        <span class="username">{{ username }}</span>
-        <button class="btn nav-btn">Logout</button>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex aling-items-center">
+  <div class="container-fluid">
+    <a class="navbar-brand nav d-flex align-items-center" ref="#">
+      <img src="./assets/images/logo.png" alt="Logo"  class="d-inline-block align-text-top logo mx-3">
+      <h1>Chef de la despensa</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
+        <li class="nav-item">
+          <a class="nav-link active link-style-nav" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-style-nav" href="#">About Us</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link link-style-nav" href="#">Top 10 de recetas</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link link-style-nav" href="#">Mis recetas</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2 input-search" type="search" placeholder="Search..." aria-label="Search" *ngIf="isLoggedIn">
+        <button class="btn btn-outline-dark mx-3 btn-search outinenone" type="submit" *ngIf="isLoggedIn">
+          <i class="bi bi-search"></i> 
+        </button>
+        <div *ngIf="!isLoggedIn">
+          <button class="btn nav-btn me-3" >Login</button>
+        </div>
+        <div *ngIf="isLoggedIn" class="d-flex align-items-center">
+          <i class="user-icon"></i>
+          <span class="username">{{ username }}</span>
+          <button class="btn nav-btn">Logout</button>
+        </div>
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>
