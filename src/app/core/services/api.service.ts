@@ -36,7 +36,8 @@ public addUser(user: User): Observable<User> {
 private urlApi = "https://api.spoonacular.com";
 //2dbadc99b6614671a501ba30279bf4e0
 //391966feb6814c65bac7d599129dde32
-  private apiKey = "apiKey=391966feb6814c65bac7d599129dde32";
+//95a12199154f4f1485344216838d6e97
+  private apiKey = "apiKey=95a12199154f4f1485344216838d6e97";
 
   public getRecipeById(id: number): Observable<any>{
     return this.http.get<any>(this.urlApi + `/recipes/${id}/information?` + this.apiKey);
