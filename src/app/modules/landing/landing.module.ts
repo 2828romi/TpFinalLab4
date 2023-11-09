@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RecipeModule } from '../recipe/recipe.module';
+import { CarouselModule } from '../carousel/carousel.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RecipeModule } from '../recipe/recipe.module';
     imports: [
         CommonModule,
         SharedModule,
-        RecipeModule
+        RecipeModule,
+        CarouselModule
     ]
 })
 export class LandingModule { }
