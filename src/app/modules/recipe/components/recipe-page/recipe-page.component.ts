@@ -22,7 +22,7 @@ export class RecipePageComponent implements OnInit{
   
 
   completeData(){
-    for(let i = 1; i < 4; i++){
+    for(let i = 1; i < 11; i++){
       try{
         this.apiService.getRecipeById(i).subscribe(
           data => {
