@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { debounce, debounceTime } from 'rxjs';
 import { ApiService } from 'src/app/core/services/api.service';
+import { SearchService } from 'src/app/core/services/search.service';
 
 @Component({
   selector: 'app-recipe-search',
@@ -8,23 +10,30 @@ import { ApiService } from 'src/app/core/services/api.service';
 })
 export class RecipeSearchComponent implements OnInit{
   
+  @Input() name: string | undefined;
+
   data: any = {};
   
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, ) {
 
   }
 
   ngOnInit(): void {
-    this.searchByName();
+    
+    
   }
 
-  searchByName(){
-    this.apiService.getRecipeByName("pasta").subscribe(
+  searchByName(recipe: string){
+    this.apiService.getRecipeByName(recipe).subscribe(
       data => {
         this.data = data;
-        console.log(data);
       }
     )
+  }
+
+  search(event: Event): void{
+    const element = event.currentTarget as HTMLInputElement;
+    this.searchByName(element.value);
   }
 
 }
