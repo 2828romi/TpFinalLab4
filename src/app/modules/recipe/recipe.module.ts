@@ -16,7 +16,8 @@ import { RecipeSearchComponent } from './components/recipe-search/recipe-search.
     RecipeRoutingModule
   ],
   exports: [
-    RecipePageComponent
+    RecipePageComponent,
+    RecipeSearchComponent
   ]
 })
 export class RecipeModule { }

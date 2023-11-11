@@ -1,19 +1,21 @@
-<p>recipe-search works!</p>
-<div *ngFor = "let item of data.results" >
-    
-    <div class="row row-cols-1 row-cols-md-3 g-4" >
-    <div class="col">
-    <div class="card h-100 ">
-        <img src="{{item.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{item.title}}</h5>
-          <a href=" " target="_blank">Complete Recipe+</a>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
+
+<section>
+  <div class="container p-5">
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="addon-wrapping"></span>
+      <input type="search" (input) = "search($event)" placeholder="search"  aria-describedby="addon-wrapping">
+    </div>  
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+      <div *ngFor="let item of data.results" class="col">
+        <div class="card h-100">
+          <img src="{{item.image}}" class="card-img-top" alt="Food">
+          <div class="card-body">
+            <h5 class="card-title">{{item.title}}</h5>
+            
+          </div>
+          
         </div>
       </div>
     </div>
-    
-</div>
-</div>
+  </div>
+</section>
