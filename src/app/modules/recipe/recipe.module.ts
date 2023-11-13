@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RecipeRoutingModule } from './recipe-routing.module';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
 import { RecipeSearchComponent } from './components/recipe-search/recipe-search.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import { RecipeSearchComponent } from './components/recipe-search/recipe-search.
   ],
   imports: [
     CommonModule,
-    RecipeRoutingModule
+    RecipeRoutingModule,
+    SharedModule
   ],
   exports: [
     RecipePageComponent,
