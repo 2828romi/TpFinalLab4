@@ -5,6 +5,7 @@ import { User } from 'src/app/core/Models';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,12 +21,14 @@ export class LoginComponent implements OnInit {
   
   public userLogin: User | null= null;
 
+  
+
   constructor(private formB: FormBuilder,private router: Router,private authService: AuthService ) {}
  
  
   ngOnInit(): void {}
 
-  loginForm: FormGroup = this.formB.group({
+    loginForm: FormGroup = this.formB.group({
     email: new FormControl('',[Validators.required,Validators.pattern(this.emailPattern)]),
     password: new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(10)]),
   })
@@ -53,33 +56,31 @@ export class LoginComponent implements OnInit {
             return `Maximo ${errors['maxLength'].requiredLength} caracteres `;
         case 'pattern':
           return 'Formato de email invalido'
-        
       }
     }
     return null;
   }
 
+
+
+
   async onSubmit() {
-
-
     try {
-
       let isLogin: boolean = await this.authService.login(this.loginForm.value.email, this.loginForm.value.password);
 
       if (isLogin) {
-        this.router.navigate(["/auth/register"]);
+      sessionStorage.setItem('token',this.email)
+        this.router.navigate(["/recipejason/jrecipe"]);
+        
       }
       else {
-
         this.email = this.loginForm.value.email;
-
         this.loginForm.reset({ email: this.email });
+        this.router.navigate(["/auth/register"])
       }
 
     } catch (error) {
       console.log(error);
     }
 }
-
-
 }

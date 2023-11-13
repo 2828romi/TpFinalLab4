@@ -26,4 +26,9 @@ export class NavBarComponent implements OnInit{
     this.router.navigate(['search']);
   }
 
+  goFavoriteJsonRecipe(){
+    this.router.navigate(['jrecipe'])
+
+  }
+
 }

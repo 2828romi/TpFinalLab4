@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 
 
@@ -16,9 +17,9 @@ export class RegisterComponent implements OnInit{
 
   //public formValue: User = new User({id:null});
 
-  public userReg: User = new User({id:null});
+  public userReg: User = new User({id:5});
 
-  constructor(private formB: FormBuilder, public apiService: ApiService){}
+  constructor(private formB: FormBuilder, public apiService: ApiService, private authService: AuthService){}
   
   ngOnInit(): void { }
 
@@ -38,13 +39,14 @@ export class RegisterComponent implements OnInit{
     this.userReg.password = this.userForm.value.password;
 
    // this.emitCharacter();
-   this.saveUser();
+   this.authService.saveUser(this.userReg).subscribe(response=> {
+    console.log("se guardó");
+   },error =>{
+    console.log('error');
+   } )
     console.log(this.userReg)
   }
 
-  public saveUser(){
-   
-  }
 
 
 
