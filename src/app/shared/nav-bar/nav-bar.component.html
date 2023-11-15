@@ -13,36 +13,28 @@
           <a class="nav-link active link-style-nav" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link link-style-nav" href="#">About Us</a>
+          <a class="nav-link link-style-nav" (click)="changeRoute($event, 'about-us')">Sobre nosotros</a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link link-style-nav" href="#">Most popular recipes</a>
+          <a class="nav-link link-style-nav" (click)="changeRoute($event, 'recetas-internacionales')">Recetas internacionales</a>
         </li>
-        <li class="nav-item">
-          <button class="nav-link link-style-nav" (click)="goSearch()">Search By Name</button>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <button class="nav-link link-style-nav" (click)="goSearch()">Buscar receta</button>
         </li>
-        <li class="nav-item">
-          <a class="nav-link link-style-nav" (click) = "goFavoriteRecipe">Favorite Recipes</a>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link link-style-nav" (click) = "goFavoriteRecipe()">Mis recetas favoritas</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isLoggedIn">
           <button class="btn nav-btn me-3" (click) = "goLogin()">Login</button>
         </li> 
       </ul>
       
       
       <form class="d-flex">
-        <input class="form-control me-2 input-search" type="search" placeholder="Search..." aria-label="Search" *ngIf="isLoggedIn">
-        <button class="btn btn-outline-dark mx-3 btn-search outinenone" type="submit" *ngIf="isLoggedIn">
-          <i class="bi bi-search"></i> 
-        </button>
-        
-        <div *ngIf="!isLoggedIn">
-          <button class="btn nav-btn me-3" (click) = "goLogin()">Login</button>
-        </div>
         <div *ngIf="isLoggedIn" class="d-flex align-items-center">
           <i class="user-icon"></i>
           <span class="username">{{ username }}</span>
-          <button class="btn nav-btn">Logout</button>
+          <button class="btn nav-btn" (click)="logout()" >Logout</button>
         </div>
       </form>
     </div>

@@ -93,12 +93,20 @@ public getUserNameById(id:number): Observable<string|null>{
     return this.isLogin;
   }
 
+  isLoggedIn(): boolean {
+    const userToken = localStorage.getItem('token');
+    return userToken !== null;
+  }
   
   public saveUser(usuario: any): Observable<any> {
     return this.http.post(this.baseURL+ '/users', usuario);
   
 }
 
+logout(): void {
+  localStorage.removeItem('token');
+  this.isLogin = false;
+}
 
 
 
