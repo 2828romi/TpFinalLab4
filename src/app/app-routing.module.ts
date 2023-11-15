@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { LandingPageComponent } from './modules/landing/components/landing-page/landing-page.component';
 import { Error404Component } from './shared/error404/error404.component';
 import { RecipeSearchComponent } from './modules/recipe/components/recipe-search/recipe-search.component';
 import { JrecipeModule } from './modules/jrecipe/jrecipe.module';
+import { AboutUsComponent } from './shared/about-us/about-us.component';
+import { RecipePageComponent } from './modules/recipe/components/recipe-page/recipe-page.component';
+
 const routes: Routes = [
 
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
   path: 'auth',
   loadChildren:() => import("./modules/auth/auth.module").then(m =>m.AuthModule)
 
+ },
+ {
+  path:'about-us',
+  component: AboutUsComponent
+ },
+ {
+  path:'recetas-internacionales',
+  component: RecipePageComponent
  },
 
  {

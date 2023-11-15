@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
 
       if (isLogin) {
 
-        this.router.navigate(["/recipejason/jrecipe"]);
+        this.router.navigate(["/landing"]);
       }
       else {
         this.email = this.loginForm.value.email;

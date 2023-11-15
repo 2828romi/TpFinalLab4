@@ -25,29 +25,33 @@
 -->
 
 
-<div class="register-container" >
+<div class="register-container fondo" >
 
-    <h2>Ingrese sus datos</h2>
+    <div class="glass">
+      <h2>Ingrese sus datos</h2>
 
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-      <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping">Ꙭ</span>
+      <div class="input-group flex-nowrap  input-register">
+        <span class="input-group-text" id="addon-wrapping">🍕</span>
         <input type="text" formControlName="userName" class="form-control" placeholder="User name" aria-label="Username" aria-describedby="addon-wrapping">
       </div>
     
-      <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping"> @ </span>
+      <div class="input-group flex-nowrap  input-register">
+        <span class="input-group-text" id="addon-wrapping"> 💻 </span>
         <input type="text" formControlName="email" class="form-control" placeholder="email" aria-label="Username" aria-describedby="addon-wrapping">
       </div>
     
-      <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping">Ꚙ</span>
+      <div class="input-group flex-nowrap  input-register">
+        <span class="input-group-text" id="addon-wrapping">💻</span>
         <input type="text" formControlName="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping">
       </div>
-      <button type="submit" class="register-button">Registrarse</button>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="register-button">Registrarse</button>
+      </div>
 
     </form>
 
+    </div>
 </div>
 
 

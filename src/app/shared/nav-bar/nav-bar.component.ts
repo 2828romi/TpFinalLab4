@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';	  
 
 
 @Component({
@@ -12,10 +13,15 @@ export class NavBarComponent implements OnInit{
   username = '';
   @Input() dataInput:any;
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
   
   ngOnInit(): void {
-    
+    this.isLoggedIn = this.authService.isLoggedIn();
+  }
+
+  changeRoute(evt: MouseEvent, name: string){
+    evt.preventDefault();
+    this.router.navigate([name]);
   }
 
   goLogin(){
@@ -28,6 +34,12 @@ export class NavBarComponent implements OnInit{
 
   goFavoriteRecipe(){
     this.router.navigate(['recipejason/jrecipe']);
+  }
+
+  
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['landing']);
   }
 
 }
