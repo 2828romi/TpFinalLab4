@@ -69,9 +69,8 @@ export class LoginComponent implements OnInit {
       let isLogin: boolean = await this.authService.login(this.loginForm.value.email, this.loginForm.value.password);
 
       if (isLogin) {
-      sessionStorage.setItem('token',this.email)
+
         this.router.navigate(["/recipejason/jrecipe"]);
-        
       }
       else {
         this.email = this.loginForm.value.email;

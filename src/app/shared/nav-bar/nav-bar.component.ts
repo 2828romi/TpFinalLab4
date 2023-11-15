@@ -12,7 +12,7 @@ export class NavBarComponent implements OnInit{
   username = '';
   @Input() dataInput:any;
 
-  constructor(private searchService: SearchService, private router: Router) {}
+  constructor(private router: Router) {}
   
   ngOnInit(): void {
     
@@ -27,7 +27,7 @@ export class NavBarComponent implements OnInit{
   }
 
   goFavoriteJsonRecipe(){
-    this.router.navigate(['jrecipe'])
+    this.router.navigate(['jrecipe']);
 
   }
 

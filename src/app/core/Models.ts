@@ -5,11 +5,11 @@ export class User implements IUser {
   subscribe(arg0: (favRec: number[]) => number[]) {
     throw new Error('Method not implemented.');
   }
-  id: number;
-  userName: string;
-  email: string;
-  password: string;
-  comments: number[];
+  id: number | null;
+  userName: string | null;
+  email: string | null;
+  password: string | null;
+  comments: number[] | null;
   favoriteRecipe: number[];
  
 
@@ -21,17 +21,28 @@ export class User implements IUser {
     this.comments = user.comments != null ? user.comments : null;
     this.favoriteRecipe = user.favoriteRecipe != null ? user.favoriteRecipe : null;
   }
+
+  public searchRecipe(id: number){
+    let found = false;
+    this.favoriteRecipe.forEach((number) => {
+        if(number === id){
+          found = true;
+        }
+      }
+    )
+    return found;
+  }
 }
 
 
 
 export class Recipe implements IRecipe{
   [x: string]: any;
-  id: number;
-  name: string;
-  instructions: string;
-  image: string;
-  comments: number[];
+  id: number | null;
+  name: string | null;
+  instructions: string | null;
+  image: string | null;
+  comments: number[] | null;
 
   constructor(recipe?:any){
     this.id = recipe.id! = null ? recipe.id : null;
@@ -40,14 +51,16 @@ export class Recipe implements IRecipe{
     this.image = recipe.image != null ? recipe.image : null;
     this.comments = recipe.comments != null ? recipe.comments : null;
   }
+
+  
 }
 
 
 
   export class Comment implements IComments {
-    id:number;
-    users: number[];
-    text: string;
+    id:number | null;
+    users: number[] | null;
+    text: string | null;
     constructor(comment? : any) {
       this.id = comment.id! = null ? comment.id : null;
       this.users = comment.user! = null ? comment.user : null;

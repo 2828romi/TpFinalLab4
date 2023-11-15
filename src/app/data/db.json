@@ -33,67 +33,85 @@
   ],
   "recipe": [
     {
-      "id": 1,
+      "id": "1",
       "name": "CANELONES",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u",
       "image": "../../assets/images/Recetas/canelones.jpg",
-      "comments": []
+      "comments": [
+        1
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "PIZZA",
       "instructions": "En un envase plástico grande mezcla la levadura y el agua. Agrega las 2 cucharadas de aceite vegetal, revuelve un poco con los dedos y comienza a incorporar la harina de trigo poco a poco. Agrega también la pizca de sal y de azúcar.",
       "image": "../../assets/images/Recetas/pizza.jpg",
-      "comments": []
+      "comments": [
+        2,
+        3
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "FLAN",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u",
       "image": "../../assets/images/Recetas/flan.jpg",
-      "comments": []
+      "comments": [
+        3,
+        1
+      ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "PANQUEQUES",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u",
       "image": "../../assets/images/Recetas/panqueques.jpg",
-      "comments": []
+      "comments": [
+        4
+      ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "SOPA DE VERDURAS",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u",
       "image": "../../assets/images/Recetas/Sopa.jpg",
-      "comments": []
+      "comments": [
+        5
+      ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "ARROZ CON CAMARONES",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u",
       "image": "../../assets/images/Recetas/arrozCamarones.jpg",
-      "comments": []
+      "comments": [
+        6
+      ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "WOK DE LOMO",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u",
       "image": "../../assets/images/Recetas/wokLomo.jpg",
       "comments": []
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "CHOCOTORTA",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u",
       "image": "../../assets/images/Recetas/chocotorta.jpg",
-      "comments": []
+      "comments": [
+        1
+      ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "TIRAMISU",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u",
       "image": "../../assets/images/Recetas/tiramisu.jpg",
-      "comments": []
+      "comments": [
+        1
+      ]
     }
   ],
   "comments": [
@@ -102,42 +120,42 @@
       "users": [
         2
       ],
-      "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "UNO"
     },
     {
       "id": 2,
       "users": [
         3
       ],
-      "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "DOS"
     },
     {
       "id": 3,
       "users": [
         4
       ],
-      "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "TRES"
     },
     {
       "id": 4,
       "users": [
         4
       ],
-      "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
     },
     {
       "id": 5,
       "users": [
         6
       ],
-      "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
     },
     {
       "id": 6,
       "users": [
         7
       ],
-      "texto": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
     }
   ]
 }

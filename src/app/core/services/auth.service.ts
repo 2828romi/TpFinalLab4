@@ -31,8 +31,9 @@ public getUsers():Observable <User[]> {
 
 // Obtener usuario por id
 public getUserById(id: number): Observable<User>{
-  return this.http.get<User>(`${this.baseURL}/user/${id}`);
+  return this.http.get<User>(`${this.baseURL}/users/${id}`);
 }
+
 
 
 //Agregar usuario
@@ -72,6 +73,7 @@ public getUserNameById(id:number): Observable<string|null>{
 
   public async login(email: string, password: string): Promise<boolean> {
 
+    
     try {
 
       let apiResponse = this.getUserToAuth(email, password);
@@ -81,7 +83,7 @@ public getUserNameById(id:number): Observable<string|null>{
       this.user = userResponse[0]; 
 
       if (this.user) {
-        localStorage.setItem('token', this.user.id!.toString());
+        sessionStorage.setItem('token', this.user.id!.toString());
         this.isLogin = true;
       }
     } catch (error) {

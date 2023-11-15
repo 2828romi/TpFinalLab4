@@ -3,12 +3,15 @@
 <hr>
 
 <div class="card-columns">
-    <div class="card bg-dark text-light" *ngFor="let jrecipe of jrecipe">
+    <div class="card bg-dark text-light" *ngFor="let jrecipe of recipes">
         <img src="{{jrecipe.image}}" class="card-img-top" style="cursor: pointer;"  >
         <div class="card-body">
             <h3 class="card-title">{{jrecipe.name}}</h3>
-            <button class="btn btn-outline-danger mt-3 mr-2"(click)="agregarReceta()"> Agregar </button>
-         
+             <div class="card-comments" *ngFor = "let item of comments" >
+                    <h4>{{item.text}}</h4>           
+            </div> 
+            <input type="checkbox" class="checkbox" (click) = "addRecipe(jrecipe)"> Agregar
+            
         </div>
     </div> 
 </div>
