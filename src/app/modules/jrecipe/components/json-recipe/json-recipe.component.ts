@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
-import { Recipe } from 'src/app/core/Models';
+import { Recipe, User, Comment } from 'src/app/core/Models';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { JrecipeService } from 'src/app/core/services/jrecipe.service';
+import { userService } from 'src/app/core/services/user.service';
 
 
 
@@ -13,38 +15,46 @@ import { JrecipeService } from 'src/app/core/services/jrecipe.service';
 export class JsonRecipeComponent implements OnInit {
 
   
-  public jrecipe: Array<Recipe>=[];
+  recipes: Array<Recipe>=[];
+  comments: Array<Comment> = [];
 
-  constructor(private jrecipeservice: JrecipeService){}
+  @Output() taskToUpdate: EventEmitter<Recipe> = new EventEmitter();
+
+
+  constructor(private jrecipeservice: JrecipeService, private userService: userService){}
   
+  users: Array<User> = [];
+  
+
   ngOnInit(): void { 
+
     this.getAllRecipe();
     
   }
 
 
-  public agregarReceta(){ 
-
-        
-   }
+  public addRecipe(recipe: Recipe) {
+    this.userService.getUsers().then(data => this.users = data);
+    for(let i = 0; i < this.users.length; i++){
+      if(this.users[i].id == sessionStorage.getItem("token")){
+        this.users[i].favoriteRecipe.push(Number(recipe.id));
+        this.userService.updateUser(this.users[i]);
+        console.log(this.users[i]);
+      }
+    }
+    //console.log(this.users);
+    //this.taskToUpdate.emit(recipe);
+  }
 
    public async getAllRecipe(){
-    try{
-      let res = this.jrecipeservice.getAllRecepiJson();
-
-      const data = await lastValueFrom(res);
-      
-      this.jrecipe = data.map((recipeData: any)=> new Recipe(recipeData));
-
-    }catch(error){
-      console.error(error);
-
-    }
+    this.jrecipeservice.getRecipes().then(data => this.recipes = data);
+    this.jrecipeservice.getComment().then(data => this.comments = data);
+    
    }
 
 
    
-   public async verReceta(id:number){
+   /*public async verReceta(id:number){
     try{
       let res = this.jrecipeservice.getJSonRecipeById(id);
 
@@ -57,7 +67,7 @@ export class JsonRecipeComponent implements OnInit {
       console.error(error);
 
     }
-   }
+   }*/
 
    }
 

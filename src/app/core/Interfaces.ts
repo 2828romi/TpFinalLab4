@@ -1,24 +1,24 @@
 export interface IUser {
-    id: number;
-    userName: string;
-    email: string;
-    password: string;
-    comments: number[];
-    favoriteRecipe: number[];
+    id: number | null;
+    userName: string | null;
+    email: string | null;
+    password: string | null;
+    comments: number[] | null;
+    favoriteRecipe: number[] | null;
   }
 
   export interface IRecipe{
-    id: number;
-    name:string;
-    instructions:string;
-    image:string;
-    comments: number[];
+    id: number | null;
+    name:string | null;
+    instructions:string | null; 
+    image:string | null;
+    comments: number[] | null;
   }
 
   export interface IComments{
-    id: number;
-    users: number[];
-    text: string;
+    id: number | null;
+    users: number[] | null ;
+    text: string | null; 
 
   }
 

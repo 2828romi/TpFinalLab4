@@ -1,68 +1,131 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Observable, catchError, map, of} from "rxjs"
-import { Recipe, User} from '../Models';
+import { lastValueFrom } from 'rxjs';
+import { JsonService } from './json.service';
+import { Recipe, Comment } from '../Models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JrecipeService {
-  private baseURL = "http://localhost:3000"
 
-  constructor(private http: HttpClient) { }
-  user = User
+  constructor(private apiService: JsonService) { }
 
+  public getRecipes(): Promise<Recipe[]> {
 
-  //* Recetas del JSON
+    return new Promise<Recipe[]>((resolve, reject) => {
 
+      this.apiService.getRecipes().subscribe({
 
-  //Todas las recetas json
-  public getAllRecepiJson() : Observable<Recipe[]>
-  {
-     return this.http.get<Recipe[]>(`${this.baseURL}/recipe`);
-  }
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    });
 
- //Recetas favoritas
-  public getAllFavoriterecipeUser(favoriteRecipe: Array<number>){
-
-     favoriteRecipe.forEach(recipe => {
-      this.http.get<Recipe>(`${this.baseURL}/recipe/${recipe}`);
-    }); 
-   
   }
 
 
+  public addRecipe(recipe: Recipe): Promise<Recipe> {
 
-  // Obtener receta por id
-  public getJSonRecipeById(id: number): Observable<Recipe>{
-    return this.http.get<Recipe>(`${this.baseURL}/recipe/${id}`);
+    return new Promise<Recipe>((resolve, reject) => {
+      this.apiService.addRecipe(recipe).subscribe({
+
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    });
+
+  }
+
+  public async updateRecipe(recipe: Recipe): Promise<Recipe | null> {
+
+    let resp: Recipe | null = null;
+
+    try{
+
+      const apiResponse = this.apiService.updateRecipe(recipe);
+      resp = await lastValueFrom(apiResponse);
+
+    }catch(error){
+
+      throw error;
     }
 
+    return resp;
+
+  }
+
+  public deleteRecipe(id: number): Promise<boolean> {
+
+    return new Promise<boolean>((resolve, reject) => {
+      this.apiService.deleteRecipe(id).subscribe({
+
+        next: bool => resolve(bool),
+        error: error => reject(error)
+      })
+    });
+  }
+
+  public getComment(): Promise<Comment[]> {
+
+    return new Promise<Comment[]>((resolve, reject) => {
+
+      this.apiService.getComments().subscribe({
+
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    });
+
+  }
+
+  public getRecipeById(id: number): Promise<Recipe> {
+
+    return new Promise<Recipe>((resolve, reject) => {
+
+      this.apiService.getRecipeById(id).subscribe({
+
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    });
+
+  }
+
+  /*public getCommentById(id: number): Promise<Comment> {
+
+    return new Promise<Comment>((resolve, reject) => {
+
+      this.apiService.getCommentById(id).subscribe({
+
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    });
+
+  }*/
+
+  /* Como no retornar la información
+
+    public getTasks(): Task[]{
+
+    let tasks: Array<Task> = [];
+
+    this.apiService.getTasks().subscribe({
+
+      next: (data) =>{
+        data.forEach(task => tasks.push(task))
+      },
+      error: (error) =>{throw error}
+    })
+
+    return tasks; Como el observable es asincronico puede ser que nos devuelva un arreglo vació, por eso se hacen promesas
+  }
 
 
-//Agregar receta favorita
-public addRecipeFavorite(createRecipe: Recipe): Observable<boolean>{
-  const url = `${this.baseURL}/recipe`;
-  return this.http.post<boolean>(url,createRecipe);
+
+
+  */
+
+
+
 }
-
-// Editar receta ?????
-public editRecipeFavorite(id: number, updateRecipe: Recipe): Observable<boolean>{
-  const url = `${this.baseURL}/recipe/${id}`;
-  return this.http.put<boolean>(url, updateRecipe);
-}
-
-//Eliminar receta favorita
-public deleteRecipeFavorite(id: number): Observable<boolean>{
-  return this.http.delete(`${this.baseURL}/recipe/${id}`)
-  .pipe(
-    map(resp => true),
-    catchError(errors => of(false))
-  );
-}
-
-
-
-}
-
-
