@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SearchService } from 'src/app/core/services/search.service';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -26,9 +26,8 @@ export class NavBarComponent implements OnInit{
     this.router.navigate(['search']);
   }
 
-  goFavoriteJsonRecipe(){
-    this.router.navigate(['jrecipe']);
-
+  goFavoriteRecipe(){
+    this.router.navigate(['recipejason/jrecipe']);
   }
 
 }

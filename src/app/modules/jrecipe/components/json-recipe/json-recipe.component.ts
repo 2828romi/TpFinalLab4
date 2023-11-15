@@ -37,19 +37,32 @@ export class JsonRecipeComponent implements OnInit {
     this.userService.getUsers().then(data => this.users = data);
     for(let i = 0; i < this.users.length; i++){
       if(this.users[i].id == sessionStorage.getItem("token")){
-        this.users[i].favoriteRecipe.push(Number(recipe.id));
-        this.userService.updateUser(this.users[i]);
-        console.log(this.users[i]);
+        if(this.searchRecipeInUser(this.users[i], Number(recipe.id)) != true){
+          this.users[i].favoriteRecipe.push(Number(recipe.id));
+          this.userService.updateUser(this.users[i]);
+          console.log(this.users[i]);
+        } else{
+          this.users[i].favoriteRecipe.splice(Number(recipe.id));
+          this.userService.updateUser(this.users[i]);
+          console.log(this.users[i]);
+        }
       }
     }
-    //console.log(this.users);
-    //this.taskToUpdate.emit(recipe);
   }
 
    public async getAllRecipe(){
     this.jrecipeservice.getRecipes().then(data => this.recipes = data);
     this.jrecipeservice.getComment().then(data => this.comments = data);
     
+   }
+
+   public searchRecipeInUser(user: User, idRecipe: number){
+      for(let i = 0; i < user.favoriteRecipe.length; i++){
+        if(user.favoriteRecipe[i] == idRecipe){
+          return true;
+        }
+      }
+      return false;
    }
 
 

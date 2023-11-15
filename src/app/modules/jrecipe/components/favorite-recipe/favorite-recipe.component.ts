@@ -16,34 +16,63 @@ export class FavoriteRecipeComponent implements OnInit {
 
 constructor(private jsonrecipeServer: JrecipeService, private userService: userService, private jsonService: JsonService) {}
 
- favoriteRecipe: Array<Number>=[];
- recipeToShow: Array<Recipe> = [];
- users: Array<User> = [];
+ favoriteRecipe: Number[] = [11, 22];
+ recipeToShow: Recipe[] = [];
+ public users: User[] = [];
 
 
 
   ngOnInit() {
     this.completeData();
-    console.log(this.jsonrecipeServer.getRecipeById(5));
+    //this.favoriteRecipeToRecipeToShow();
+    
   }
 
-  completeData() {
-    this.userService.getUsers().then(data => this.users = data);
-    for(let i = 0; i < this.users.length; i++){
-      if(this.users[i].id == sessionStorage.getItem("token")){
-        this.favoriteRecipe = this.users[i].favoriteRecipe;
+  async completeData() {
+    try {
+      this.users = await this.userService.getUsers().then(data => this.users = data);
+      for(let item of this.users){
+        if(item.id == sessionStorage.getItem("token")){
+          this.favoriteRecipe = item.favoriteRecipe;
+        }
       }
+      this.favoriteRecipeToRecipeToShow();
+      
+    }
+    catch (error){
+      console.log(error);
     }
   }
 
+
   
 
-  private getRecipe(id: number){
-    let recipe : Recipe;
-    return this.jsonrecipeServer.getRecipeById(id).then(data => recipe = data);
+  async getRecipeById(id: number){
+    try{
+      const data = await this.jsonrecipeServer.getRecipeById(id);
+      const recipe = Array.isArray(data) ? data[0] : data;
+      return recipe;
+    }
+    catch (error){
+      return undefined;
+    }
   }
 
-
+  async favoriteRecipeToRecipeToShow(){
+    for(let i = 0; i < this.favoriteRecipe.length; i++){
+      try{
+        let recipe = await this.getRecipeById(Number(this.favoriteRecipe[i]));
+        
+        this.recipeToShow.push(recipe);
+        
+      } catch (error){
+        
+      }
+      
+      //this.recipeToShow.push(recipe);
+    }
+    //console.log(this.recipeToShow);
+  }
   
 
  
