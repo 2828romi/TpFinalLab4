@@ -9,11 +9,11 @@
 
     <tbody>
         <tr>
-            <div>
+            <div *ngFor = "let item of recipeToShow">
             
-                <td><img src=></td>
+                <td><img src={{item.image}} class = "card-img-top"></td>
             
-                <td><br></td>
+                <td>{{item.name}}<br></td>
            
                 <td><br>
                 <button class="btn btn-danger btn-xs"> Eliminar </button>
