@@ -27,7 +27,7 @@ export class RecipePageComponent implements OnInit{
         this.apiService.getRecipeById(i).subscribe(
           data => {
             this.data.push(data);
-            console.log(data);
+            
           }
         )
       } catch (error) {
