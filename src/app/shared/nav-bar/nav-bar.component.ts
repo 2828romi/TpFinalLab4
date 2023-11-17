@@ -40,6 +40,11 @@ export class NavBarComponent implements OnInit{
   goFavoriteRecipe(){
     this.router.navigate(['recetas/favorite']);
   }
+
+  
+  public goRegister(){
+    this.router.navigate(['/auth/register'])
+  }
   
   logout(): void {
     this.authService.logout();
