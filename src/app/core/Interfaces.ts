@@ -11,6 +11,7 @@ export interface IUser {
     id: number | null;
     name:string | null;
     instructions:string | null; 
+    url: string | null;
     image:string | null;
     comments: number[] | null;
   }

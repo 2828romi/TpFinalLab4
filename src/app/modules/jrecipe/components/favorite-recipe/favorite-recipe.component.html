@@ -22,7 +22,7 @@
         <tr *ngFor="let item of recipeToShow">
             <td><img src="{{item.image}}" class="img-thumbnail" width="100"></td>
             <td><br>{{item.name}}</td>
-            <td><br>{{item.instructions}}</td>
+            <td><a class="btn btn-outline-secondary center p-4" target = "_blank" href="{{item.url}}">Receta Completa</a></td>
             
             
 

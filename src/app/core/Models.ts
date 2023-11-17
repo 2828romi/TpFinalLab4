@@ -9,6 +9,7 @@ export class User implements IUser {
   userName: string | null;
   email: string | null;
   password: string | null;
+  
   comments: number[] | null;
   favoriteRecipe: number[];
  
@@ -22,16 +23,6 @@ export class User implements IUser {
     this.favoriteRecipe = user.favoriteRecipe != null ? user.favoriteRecipe : null;
   }
 
-  public searchRecipe(id: number){
-    let found = false;
-    this.favoriteRecipe.forEach((number) => {
-        if(number === id){
-          found = true;
-        }
-      }
-    )
-    return found;
-  }
 }
 
 
@@ -41,6 +32,7 @@ export class Recipe implements IRecipe{
   id: number | null;
   name: string | null;
   instructions: string | null;
+  url: string | null;
   image: string | null;
   comments: number[] | null;
 
@@ -48,6 +40,7 @@ export class Recipe implements IRecipe{
     this.id = recipe.id! = null ? recipe.id : null;
     this.name = recipe.name != null ? recipe.name : null;
     this.instructions = recipe.instructions != null ? recipe.instructions : null;
+    this.url = recipe.url != null ? recipe.url : null;
     this.image = recipe.image != null ? recipe.image : null;
     this.comments = recipe.comments != null ? recipe.comments : null;
   }
