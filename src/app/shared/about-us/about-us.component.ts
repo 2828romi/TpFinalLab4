@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/core/services/auth.service';
+
+
 
 @Component({
   selector: 'app-about-us',
@@ -9,18 +9,11 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class AboutUsComponent implements OnInit {
 
-  isLoggedIn = false; 
-
   ngOnInit(): void {
-    this.isLoggedIn = this.authSrevice.isLoggedIn();
-    console.log(this.isLoggedIn);
-      
+  
   }
 
-  constructor(private router: Router, private authSrevice: AuthService ){}
+  constructor( ){}
 
-  public goRegister(){
-    this.router.navigate(['/auth/register'])
-  }
 
 }
