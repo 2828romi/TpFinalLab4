@@ -28,40 +28,57 @@ export class JsonRecipeComponent implements OnInit {
 
   ngOnInit(): void { 
 
-    this.getAllRecipe();
+    this.completeData();
     
   }
 
 
   public addRecipe(recipe: Recipe) {
-    this.userService.getUsers().then(data => this.users = data);
+    
     for(let i = 0; i < this.users.length; i++){
       if(this.users[i].id == sessionStorage.getItem("token")){
-        if(this.searchRecipeInUser(this.users[i], Number(recipe.id)) != true){
+        if(this.searchRecipeInUser(this.users[i], Number(recipe.id)) == false){
           this.users[i].favoriteRecipe.push(Number(recipe.id));
           this.userService.updateUser(this.users[i]);
-          console.log(this.users[i]);
         } else{
-          this.users[i].favoriteRecipe.splice(Number(recipe.id));
+          let aux = this.users[i].favoriteRecipe.indexOf(Number(recipe.id));
+          this.users[i].favoriteRecipe.splice(aux);
           this.userService.updateUser(this.users[i]);
-          console.log(this.users[i]);
+          
         }
       }
     }
   }
 
-   public async getAllRecipe(){
+  obtenerEstadoCheckbox(recipe: Recipe): boolean {
+    for(let item of this.users){
+      if(item.id == sessionStorage.getItem("token")){
+        for(let item2 of item.favoriteRecipe){
+          if(item2 == recipe.id){
+            return true;
+          }
+        }
+      }
+      
+    }
+    return false;
+  }
+
+  
+
+   public async completeData(){
     this.jrecipeservice.getRecipes().then(data => this.recipes = data);
     this.jrecipeservice.getComment().then(data => this.comments = data);
-    
+    this.userService.getUsers().then(data => this.users = data);
    }
 
    public searchRecipeInUser(user: User, idRecipe: number){
-      for(let i = 0; i < user.favoriteRecipe.length; i++){
-        if(user.favoriteRecipe[i] == idRecipe){
+      for(let item of user.favoriteRecipe){
+        if(item === idRecipe){
           return true;
         }
       }
+
       return false;
    }
 

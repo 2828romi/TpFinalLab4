@@ -4,6 +4,7 @@ import { User } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Router } from '@angular/router';
+import { userService } from 'src/app/core/services/user.service';
 
 
 
@@ -18,15 +19,23 @@ export class RegisterComponent implements OnInit{
 
   //public formValue: User = new User({id:null});
 
-  public userReg: User = new User({id:5});
+  public userReg: User = new User({});
+  users: Array<User> = [];
 
-  constructor(private formB: FormBuilder, public apiService: ApiService, private authService: AuthService,private router: Router){}
+  constructor(private userService: userService, private formB: FormBuilder, public apiService:
+     ApiService, private authService: AuthService,private router: Router){}
   
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getUsers();
+    
+   }
 
 
    @Output() public onNewUser: EventEmitter<User>= new EventEmitter();
 
+   getUsers(){
+    this.userService.getUsers().then(data => this.users = data);
+   }
   
   public userForm: FormGroup= this.formB.group({
     userName: new FormControl('', [Validators.required]),
@@ -35,11 +44,12 @@ export class RegisterComponent implements OnInit{
   });
  
   public onSubmit() {
+    this.userReg.id = this.getLastId();
     this.userReg.userName = this.userForm.value.userName;
     this.userReg.email = this.userForm.value.email;
     this.userReg.password = this.userForm.value.password;
-
-   // this.emitCharacter();
+    console.log(this.getLastId());
+    this.emitCharacter();
    this.authService.saveUser(this.userReg).subscribe(response=> {
     console.log("se guardó");
    },error =>{
@@ -49,7 +59,14 @@ export class RegisterComponent implements OnInit{
   }
 
 
-
+  private getLastId(){
+    
+    let lastId = 1;
+    for(let item of this.users){
+      lastId++;
+    }
+    return lastId;
+  }
 
 
 

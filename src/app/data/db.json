@@ -16,19 +16,29 @@
       "comments": [
         2
       ],
-      "favoriteRecipe": [
-        1,
-        2,
-        4,
-        7,
-        5
-      ]
+      "favoriteRecipe": []
     },
     {
-      "id": 5,
+      "id": 3,
       "userName": "pipi",
       "email": "pipi@gmail.com",
       "password": "pipi1234",
+      "comments": null,
+      "favoriteRecipe": null
+    },
+    {
+      "id": 4,
+      "userName": "jere",
+      "email": "jere@mail.com",
+      "password": "jere1234",
+      "comments": null,
+      "favoriteRecipe": null
+    },
+    {
+      "id": 5,
+      "userName": "marrok",
+      "email": "marrok@mail.com",
+      "password": "marrok1234",
       "comments": null,
       "favoriteRecipe": null
     }
