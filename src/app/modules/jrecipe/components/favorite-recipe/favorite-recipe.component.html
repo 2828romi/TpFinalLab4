@@ -1,28 +1,29 @@
-
+<app-nav-bar></app-nav-bar>
 <div class="mt-2">
 
 
-<table class="table table-dark text-center">
-    <thead>
-        <tr class="">  Recetas Favoritas  </tr>
-    </thead>
+    <table class="table table-dark text-center">
+        <thead>
+            <tr class=""> Recetas Favoritas </tr>
+        </thead>
 
-    <tbody>
-        <tr>
-            <div *ngFor = "let item of recipeToShow">
-            
-                <td><img src={{item.image}} class = "card-img-top"></td>
-            
-                <td>{{item.name}}<br></td>
-           
-                <td><br>
-                <button class="btn btn-danger btn-xs"> Eliminar </button>
-                </td>
+        <tbody>
+            <tr>
+                <div *ngFor="let item of recipeToShow">
 
-            </div> 
-        </tr>
-    </tbody>
+                    <td><img src={{item.image}} class="card-img-top"></td>
 
-</table>
+                    <td>{{item.name}}<br></td>
+
+                    <td><br>
+                        <button class="btn btn-danger btn-xs"> Eliminar </button>
+                    </td>
+
+                </div>
+            </tr>
+        </tbody>
+
+    </table>
 
 </div>
+<app-footer></app-footer>

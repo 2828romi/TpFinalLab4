@@ -1,3 +1,6 @@
+.container-recetas-json{
+  padding-top: 85px;
+}
 .heart-container {
     --heart-color: rgb(255, 91, 137);
     position: relative;

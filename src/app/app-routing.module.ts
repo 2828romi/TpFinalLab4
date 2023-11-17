@@ -29,7 +29,7 @@ const routes: Routes = [
  },
 
  {
-  path:'recipejason',
+  path:'recetas',
   loadChildren:() => import("./modules/jrecipe/jrecipe.module").then(m => JrecipeModule)
  },
  

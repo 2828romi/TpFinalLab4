@@ -22,6 +22,9 @@
           <button class="nav-link link-style-nav" (click)="goSearch()">Buscar receta</button>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link link-style-nav" (click) = "goNationalRecipes()">Recetas nacionales</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
           <a class="nav-link link-style-nav" (click) = "goFavoriteRecipe()">Mis recetas favoritas</a>
         </li>
         <li class="nav-item" *ngIf="!isLoggedIn">

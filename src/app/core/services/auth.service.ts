@@ -94,7 +94,7 @@ public getUserNameById(id:number): Observable<string|null>{
   }
 
   isLoggedIn(): boolean {
-    const userToken = localStorage.getItem('token');
+    const userToken = sessionStorage.getItem('token');
     return userToken !== null;
   }
   
@@ -104,8 +104,9 @@ public getUserNameById(id:number): Observable<string|null>{
 }
 
 logout(): void {
-  localStorage.removeItem('token');
+  sessionStorage.removeItem('token');
   this.isLogin = false;
+  
 }
 
 

@@ -5,7 +5,7 @@
   
     <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
   
-    <div class="form-group container   ">
+    <div class="form-group container">
   
       <div class="mb-3 container ">
         <label class="form-label ">Email</label>
@@ -13,7 +13,7 @@
         <span *ngIf="isValidField('email')" class="error-Message"> {{getErrorInField('email')}} </span>
       </div>
   
-      <div class="col g-3 align-items-center container">
+      <div class="g-3 align-items-center">
         <div class="col-auto">
           <label class="col-form-label">Password</label>
         </div>

@@ -1,8 +1,8 @@
 <app-nav-bar></app-nav-bar>
-<app-footer></app-footer>
-<hr>
 
-<div class="card-columns container">
+
+
+<div class="card-columns container pb-5 mt-5 container-recetas-json">
    
     <div class="card bg-dark text-light card-container" *ngFor="let jrecipe of recipes">
       <img src="{{jrecipe.image}}" class="card-img-top" style="cursor: pointer;"  >
@@ -36,7 +36,7 @@
       </div>
   </div> 
 </div>
-
+<app-footer></app-footer>
 
 
  <!--Modal Agregar Receta  
