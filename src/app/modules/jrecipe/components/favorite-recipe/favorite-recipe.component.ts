@@ -24,7 +24,7 @@ constructor(private jsonrecipeServer: JrecipeService, private userService: userS
 
   ngOnInit() {
     this.completeData();
-    //this.favoriteRecipeToRecipeToShow();
+
     
   }
 
@@ -69,9 +69,8 @@ constructor(private jsonrecipeServer: JrecipeService, private userService: userS
         
       }
       
-      //this.recipeToShow.push(recipe);
     }
-    //console.log(this.recipeToShow);
+  
   }
   
 

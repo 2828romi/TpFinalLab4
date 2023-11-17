@@ -35,8 +35,6 @@
       
       <form class="d-flex">
         <div *ngIf="isLoggedIn" class="d-flex align-items-center">
-          <i class="user-icon"></i>
-          <span class="username">{{ username }}</span>
           <button class="btn nav-btn" (click)="logout()" >Logout</button>
         </div>
       </form>

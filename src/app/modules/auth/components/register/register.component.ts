@@ -17,7 +17,7 @@ import { userService } from 'src/app/core/services/user.service';
 
 export class RegisterComponent implements OnInit{
 
-  //public formValue: User = new User({id:null});
+  
 
   public userReg: User = new User({});
   users: Array<User> = [];

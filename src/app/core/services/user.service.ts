@@ -66,27 +66,9 @@ export class userService {
     });
   }
 
-  /* Como no retornar la información
-
-    public getTasks(): Task[]{
-
-    let tasks: Array<Task> = [];
-
-    this.apiService.getTasks().subscribe({
-
-      next: (data) =>{
-        data.forEach(task => tasks.push(task))
-      },
-      error: (error) =>{throw error}
-    })
-
-    return tasks; Como el observable es asincronico puede ser que nos devuelva un arreglo vació, por eso se hacen promesas
-  }
 
 
 
-
-  */
 
 
 

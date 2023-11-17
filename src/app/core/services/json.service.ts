@@ -13,26 +13,12 @@ export class JsonService {
 
   constructor(private http: HttpClient) { }
 
-  //! TASKS
+  
 
   public getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseURL}/users`);
   }
 
-
-/*   public getTasks(): Task[]{ NO ES RECOMENDABLE HACERLO
-
-    let taskList: Array<Task> = [];
-
-    this.http.get<Task[]>(`${this.baseURL}/tasks?_sort=priority&_order=asc`).subscribe({
-
-      next: (data) => taskList = data,
-      error: (error) => {throw Error("No se pudo acceder a los datos")
-
-    }})
-
-    return taskList;
-  } */
 
   public addUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.baseURL}/users`, user);
@@ -54,26 +40,12 @@ export class JsonService {
 
     return this.http.delete(`${this.baseURL}/users/${id}`)
       .pipe(
-        map(resp => true), // Si sale bien retorna true. Recibir un response significa que salio bien
-        catchError(error => of(false)) // Si hay algun error en la solicitud me regresa falso
+        map(resp => true), // 
+        catchError(error => of(false)) // 
       );
   }
 
-  //! Users
-
-  public getToAuth(email: string, password: string): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseURL}/users?email=${email}&password=${password}`);
-  }
-
-  /* Ejemplo de como trasnformar la respuesta de la api */
-  public getUserNameById(id:number): Observable<string | null> {
-
-    return this.http.get<User>(`${this.baseURL}/users/${id}`).pipe(
-      map(user => user.userName),
-      catchError(error => of(null))
-    );
-  }
-
+ 
   public getRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(`${this.baseURL}/recipe`);
   }
@@ -88,14 +60,13 @@ export class JsonService {
     return this.http.patch<Recipe>(`${this.baseURL}/recipe/${recipe.id}`, recipe);
   }
 
-  
 
   public deleteRecipe(id: number): Observable<boolean> {
 
     return this.http.delete(`${this.baseURL}/recipe/${id}`)
       .pipe(
-        map(resp => true), // Si sale bien retorna true. Recibir un response significa que salio bien
-        catchError(error => of(false)) // Si hay algun error en la solicitud me regresa falso
+        map(resp => true), 
+        catchError(error => of(false))
       );
   }
 

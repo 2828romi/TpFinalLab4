@@ -84,24 +84,6 @@ export class JsonRecipeComponent implements OnInit {
    }
 
 
-  
-
-
-   /*public async verReceta(id:number){
-    try{
-      let res = this.jrecipeservice.getJSonRecipeById(id);
-
-      const data = await lastValueFrom(res);
-      
-      this.jrecipe = data['map']((recipeData: any)=> new Recipe(recipeData));
-      
-
-    }catch(error){
-      console.error(error);
-
-    }
-   }*/
-
    }
 
 
