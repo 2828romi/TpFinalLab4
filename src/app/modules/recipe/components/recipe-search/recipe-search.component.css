@@ -1,8 +1,10 @@
 .section-search{
     padding:15px;
-    height:100vh;
+    height:calc(100vh + 100px);
+    background-color: var(--colorRecipes);
     
 }
+
 
 h2{
   font-size: 2.5rem;

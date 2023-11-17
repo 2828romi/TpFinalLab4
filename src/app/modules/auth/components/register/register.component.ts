@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { User } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { Router } from '@angular/router';
 
 
 
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit{
 
   public userReg: User = new User({id:5});
 
-  constructor(private formB: FormBuilder, public apiService: ApiService, private authService: AuthService){}
+  constructor(private formB: FormBuilder, public apiService: ApiService, private authService: AuthService,private router: Router){}
   
   ngOnInit(): void { }
 
@@ -58,6 +59,9 @@ export class RegisterComponent implements OnInit{
     
   }          
   
+  goLogin(){
+    this.router.navigate(['auth']);
+  }
 
 /*
   onSubmit(formValue: any){

@@ -17,6 +17,7 @@ export class NavBarComponent implements OnInit{
   
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
+    console.log(this.isLoggedIn);
   }
 
   changeRoute(evt: MouseEvent, name: string){
@@ -32,10 +33,13 @@ export class NavBarComponent implements OnInit{
     this.router.navigate(['search']);
   }
 
-  goFavoriteRecipe(){
-    this.router.navigate(['recipejason/jrecipe']);
+  goNationalRecipes(){
+    this.router.navigate(['recetas/nacionales']);
   }
 
+  goFavoriteRecipe(){
+    this.router.navigate(['recetas/favorite']);
+  }
   
   logout(): void {
     this.authService.logout();

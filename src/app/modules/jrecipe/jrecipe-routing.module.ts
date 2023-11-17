@@ -7,7 +7,7 @@ import { RecipeViewComponent } from './components/recipe-view/recipe-view.compon
 const routes: Routes = [
 
   {
-    path:'jrecipe',
+    path:'nacionales',
     component: JsonRecipeComponent
   },
 
