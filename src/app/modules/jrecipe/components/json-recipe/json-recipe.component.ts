@@ -17,6 +17,7 @@ export class JsonRecipeComponent implements OnInit {
   
   recipes: Array<Recipe>=[];
   comments: Array<Comment> = [];
+  
 
   @Output() taskToUpdate: EventEmitter<Recipe> = new EventEmitter();
 
@@ -83,7 +84,9 @@ export class JsonRecipeComponent implements OnInit {
    }
 
 
-   
+  
+
+
    /*public async verReceta(id:number){
     try{
       let res = this.jrecipeservice.getJSonRecipeById(id);

@@ -50,8 +50,8 @@ export class RegisterComponent implements OnInit{
     this.userReg.password = this.userForm.value.password;
     console.log(this.getLastId());
     this.emitCharacter();
-   this.authService.saveUser(this.userReg).subscribe(response=> {
-    console.log("se guardó");
+    this.authService.saveUser(this.userReg).subscribe(response=> {
+    this.router.navigate(['auth/login']);
    },error =>{
     console.log('error');
    } )
@@ -75,27 +75,8 @@ export class RegisterComponent implements OnInit{
   
     
   }          
-  
-  goLogin(){
-    this.router.navigate(['auth']);
-  }
 
-/*
-  onSubmit(formValue: any){
-    this.saveUser(formValue)
-  }
 
-  
- public saveUser(user: User){
-    this.apiService.post('/data/db.json', user).subscribe(
-      (response: any) => {console.log('Usuario guardado',response);},
-      (error: any) => {console.log('Error al guardar', error);}
-    );   
-    
-    return console.log(user);
-
-  }
-*/
 
 
 
