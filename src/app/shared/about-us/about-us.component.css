@@ -2,7 +2,7 @@
     height: 100vh;
     width: 80%;
     line-height: 1.5;
-    padding-top: 70px;
+    padding-top: 150px;
 }
 
 .section-about h2 {
@@ -33,7 +33,7 @@ li{
     border: none;
     cursor: pointer;
     font-size: 1.2rem;
-    margin: 10px 0;
+    margin: 20px 0;
     transition: all 0.3s ease-in-out;
 }
 

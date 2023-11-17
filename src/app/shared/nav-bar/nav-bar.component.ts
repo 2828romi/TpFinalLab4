@@ -10,7 +10,7 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class NavBarComponent implements OnInit{
   isLoggedIn = false; 
-  username = '';
+  
   @Input() dataInput:any;
 
   constructor(private authService: AuthService, private router: Router) {}

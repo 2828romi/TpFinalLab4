@@ -23,53 +23,6 @@ public getUserToAuth(email:string, password: string): Observable<User[]>{
   return this.http.get<User[]>(`${this.baseURL}/users?email=${email}&password=${password}`);
 }
 
-//Obtener todos los usuarios
-public getUsers():Observable <User[]> {
-  return this.http.get<User[]>(`${this.baseURL}/users`);
-}
-
-
-// Obtener usuario por id
-public getUserById(id: number): Observable<User>{
-  return this.http.get<User>(`${this.baseURL}/users/${id}`);
-}
-
-
-
-//Agregar usuario
-public addUser(createUser: User): Observable<boolean>{
-  const url = `${this.baseURL}/user`;
-  return this.http.post<boolean>(url,createUser);
-}
-
-// Editar un usuario
-public editUser(id: number, updateUser: User): Observable<boolean>{
-  const url = `${this.baseURL}/user/${id}`;
-  return this.http.put<boolean>(url, updateUser);
-}
-
-//Eliminar usuario
-public deleteUser(id: number): Observable<boolean>{
-  return this.http.delete(`${this.baseURL}/user/${id}`)
-  .pipe(
-    map(resp => true),
-    catchError(errors => of(false))
-  );
-}
-
-
-// transforma la rta de la api en un usuario
-public getUserNameById(id:number): Observable<string|null>{
-  return this.http.get<User>(`${this.baseURL}/users/${id}`).pipe(
-    map(user=> user.userName),
-    catchError(error=>of(null))
-  );
-}
-
-
-
-
-
 
   public async login(email: string, password: string): Promise<boolean> {
 
@@ -110,18 +63,5 @@ logout(): void {
 }
 
 
-
-/*
-  public addUser(user: User): Promise<User> {
-
-    return new Promise<User>((resolve, reject) => {
-      this.apiService.addUser(user).subscribe({
-
-        next: data => resolve(data),
-        error: error => reject(error)
-      })
-    });
-
-  }*/
 
 }
