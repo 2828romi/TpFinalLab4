@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="card-columns container pb-5 mt-5 container-recetas-json">
+<div class="card-columns container pb-5 mt-5 container-recetas-json align-items-center">
    
     <div class="card bg-dark text-light card-container" *ngFor="let jrecipe of recipes">
       <img src="{{jrecipe.image}}" class="card-img-top" style="cursor: pointer;"  >
@@ -10,6 +10,7 @@
                 
           </div> 
           
+        <div class="d-flex justify-content-evenly">
           <div class="heart-container" title="Like">
             <input type="checkbox" class="checkbox" id="Give-It-An-Id" (click) = "addRecipe(jrecipe)" [checked]="obtenerEstadoCheckbox(jrecipe)">
             <div class="svg-container ">
@@ -33,7 +34,8 @@
         </div>
 
         <div>
-          <a href="{{jrecipe.url}}" target="_blank">Ver receta</a>
+          <a class="btn btn-outline-warning" href="{{jrecipe.url}}" target="_blank">Ver receta</a>
+        </div>
         </div>
           
       </div>

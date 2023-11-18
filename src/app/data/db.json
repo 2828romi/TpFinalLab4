@@ -19,7 +19,8 @@
       "favoriteRecipe": [
         1,
         8,
-        9
+        9,
+        5
       ]
     },
     {
@@ -67,6 +68,14 @@
       "userName": "rere",
       "email": "rere@gmail.com",
       "password": "rere1234",
+      "comments": null,
+      "favoriteRecipe": null
+    },
+    {
+      "id": 9,
+      "userName": "pepepe",
+      "email": "pepepe@gmail.com",
+      "password": "pepe1234",
       "comments": null,
       "favoriteRecipe": null
     }
