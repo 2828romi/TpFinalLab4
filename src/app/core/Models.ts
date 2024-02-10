@@ -42,6 +42,7 @@ export class Recipe implements IRecipe{
   name: string | null;
   instructions: string | null;
   image: string | null;
+  url: string | null;
   comments: number[] | null;
 
   constructor(recipe?:any){
@@ -49,6 +50,7 @@ export class Recipe implements IRecipe{
     this.name = recipe.name != null ? recipe.name : null;
     this.instructions = recipe.instructions != null ? recipe.instructions : null;
     this.image = recipe.image != null ? recipe.image : null;
+    this.url = recipe.url != null ? recipe.url : null;
     this.comments = recipe.comments != null ? recipe.comments : null;
   }
 
@@ -59,11 +61,13 @@ export class Recipe implements IRecipe{
 
   export class Comment implements IComments {
     id:number | null;
-    users: number[] | null;
+    user: number | null;
+    recipe: number | null;
     text: string | null;
     constructor(comment? : any) {
       this.id = comment.id! = null ? comment.id : null;
-      this.users = comment.user! = null ? comment.user : null;
+      this.user = comment.user! = null ? comment.user : null;
+      this.recipe = comment.recipe! = null ? comment.recipe : null;
       this.text = comment.text! = null ? comment.text : null;
     }
   }

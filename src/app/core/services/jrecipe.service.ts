@@ -65,7 +65,7 @@ export class JrecipeService {
     });
   }
 
-  public getComment(): Promise<Comment[]> {
+  public getComments(): Promise<Comment[]> {
 
     return new Promise<Comment[]>((resolve, reject) => {
 

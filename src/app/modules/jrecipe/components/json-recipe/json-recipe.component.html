@@ -8,9 +8,10 @@
       <img src="{{jrecipe.image}}" class="card-img-top" style="cursor: pointer;"  >
       <div class="card-body">
           <h3 class="card-title title-card-json mt-3 d-flex justify-content-start h4">{{jrecipe.name}}</h3>
-           <div class="card-comments" *ngFor = "let item of comments" >
-                  <!--<h4>{{item.text}}</h4>-->
-          </div> 
+                  <h4>Comentarios: </h4>
+                  <h5 >
+                    {{getCommentByRecipeId(jrecipe.id!)}}
+                  </h5>
           
           <div class="heart-container" title="Like">
             <input type="checkbox" class="checkbox" id="Give-It-An-Id" (click) = "addRecipe(jrecipe)" [checked]="obtenerEstadoCheckbox(jrecipe)">

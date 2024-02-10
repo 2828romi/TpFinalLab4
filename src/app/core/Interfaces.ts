@@ -12,12 +12,14 @@ export interface IUser {
     name:string | null;
     instructions:string | null; 
     image:string | null;
+    url: string | null;
     comments: number[] | null;
   }
 
   export interface IComments{
     id: number | null;
-    users: number[] | null ;
+    user: number | null ;
+    recipe: number | null ;
     text: string | null; 
 
   }

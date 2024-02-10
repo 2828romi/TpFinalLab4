@@ -18,6 +18,7 @@ export class JsonRecipeComponent implements OnInit {
   recipes: Array<Recipe>=[];
   comments: Array<Comment> = [];
 
+
   @Output() taskToUpdate: EventEmitter<Recipe> = new EventEmitter();
 
 
@@ -30,6 +31,16 @@ export class JsonRecipeComponent implements OnInit {
 
     this.completeData();
     
+  }
+
+  public getCommentByRecipeId(id: number){
+    let arrayOfComments : Array<string> = [];
+    for(let item of this.comments){
+      if(item.recipe == id){
+        arrayOfComments.push(item.text!);
+      }
+    }
+    return arrayOfComments;
   }
 
 
@@ -68,8 +79,9 @@ export class JsonRecipeComponent implements OnInit {
 
    public async completeData(){
     this.jrecipeservice.getRecipes().then(data => this.recipes = data);
-    this.jrecipeservice.getComment().then(data => this.comments = data);
+    this.jrecipeservice.getComments().then(data => this.comments = data);
     this.userService.getUsers().then(data => this.users = data);
+    
    }
 
    public searchRecipeInUser(user: User, idRecipe: number){
