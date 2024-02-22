@@ -29,6 +29,10 @@ export class NavBarComponent implements OnInit{
     this.router.navigate(['auth']);
   }
 
+  goRegister(){
+    this.router.navigate(['auth/register']);
+  }
+
   goSearch(){
     this.router.navigate(['search']);
   }

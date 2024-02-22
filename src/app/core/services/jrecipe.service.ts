@@ -90,42 +90,4 @@ export class JrecipeService {
     });
 
   }
-
-  /*public getCommentById(id: number): Promise<Comment> {
-
-    return new Promise<Comment>((resolve, reject) => {
-
-      this.apiService.getCommentById(id).subscribe({
-
-        next: data => resolve(data),
-        error: error => reject(error)
-      })
-    });
-
-  }*/
-
-  /* Como no retornar la información
-
-    public getTasks(): Task[]{
-
-    let tasks: Array<Task> = [];
-
-    this.apiService.getTasks().subscribe({
-
-      next: (data) =>{
-        data.forEach(task => tasks.push(task))
-      },
-      error: (error) =>{throw error}
-    })
-
-    return tasks; Como el observable es asincronico puede ser que nos devuelva un arreglo vació, por eso se hacen promesas
-  }
-
-
-
-
-  */
-
-
-
 }

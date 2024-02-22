@@ -51,6 +51,7 @@ export class RegisterComponent implements OnInit{
     console.log(this.getLastId());
     this.emitCharacter();
    this.authService.saveUser(this.userReg).subscribe(response=> {
+    this.userForm.reset();
     console.log("se guardó");
    },error =>{
     console.log('error');
@@ -76,9 +77,7 @@ export class RegisterComponent implements OnInit{
     
   }          
   
-  goLogin(){
-    this.router.navigate(['auth']);
-  }
+
 
 /*
   onSubmit(formValue: any){
