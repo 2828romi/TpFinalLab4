@@ -33,9 +33,9 @@ export class JsonRecipeComponent implements OnInit {
     
   }
 
+  
 
   public addRecipe(recipe: Recipe) {
-    
     for(let i = 0; i < this.users.length; i++){
       if(this.users[i].id == sessionStorage.getItem("token")){
         if(this.searchRecipeInUser(this.users[i], Number(recipe.id)) == false){
@@ -43,34 +43,30 @@ export class JsonRecipeComponent implements OnInit {
           this.userService.updateUser(this.users[i]);
         } else{
           let aux = this.users[i].favoriteRecipe.indexOf(Number(recipe.id));
-          this.users[i].favoriteRecipe.splice(aux);
+          this.users[i].favoriteRecipe.splice(aux, 1);
           this.userService.updateUser(this.users[i]);
-          
         }
       }
     }
+    
   }
 
-  obtenerEstadoCheckbox(recipe: Recipe): boolean {
-    for(let item of this.users){
-      if(item.id == sessionStorage.getItem("token")){
-        for(let item2 of item.favoriteRecipe){
-          if(item2 == recipe.id){
-            return true;
-          }
-        }
+
+  getUser(){
+    let user!: User;
+    for(let i = 0; i < this.users.length; i++){
+      if(this.users[i].id == sessionStorage.getItem("token")){
+        user = this.users[i];
       }
-      
     }
-    return false;
+    return user;
   }
-
-  
 
    public async completeData(){
     this.jrecipeservice.getRecipes().then(data => this.recipes = data);
     this.jrecipeservice.getComment().then(data => this.comments = data);
     this.userService.getUsers().then(data => this.users = data);
+    
    }
 
    public searchRecipeInUser(user: User, idRecipe: number){
@@ -82,6 +78,38 @@ export class JsonRecipeComponent implements OnInit {
 
       return false;
    }
+
+   public checkRecipe(recipe: Recipe){
+    let user = this.getUser();
+    for(let item of user.favoriteRecipe){
+      if(item == recipe.id){
+        return true;
+      }
+    }
+    return false;
+ }
+
+
+ getCommentById(idComment: number){
+  let commentToReturn!: Comment;
+    for(let comment of this.comments){
+      if(comment.id == idComment){
+        commentToReturn = comment;
+      }
+    }
+    return commentToReturn;
+ }
+
+ getText(recipe: Recipe){
+  let text!: Comment;
+  if(recipe.comments !== null){
+    text = this.getCommentById(recipe.comments[0]);
+  } 
+  return text.text;
+ }
+
+
+   
 
 
    }

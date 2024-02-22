@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "userName": "admin",
       "email": "admin@gmail.com",
       "password": "admin123",
@@ -9,7 +9,7 @@
       "favoriteRecipe": []
     },
     {
-      "id": 2,
+      "id": "2",
       "userName": "juli",
       "email": "juli@gmail.com",
       "password": "juli1234",
@@ -18,13 +18,11 @@
       ],
       "favoriteRecipe": [
         1,
-        8,
-        9,
-        5
+        2
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "userName": "pipi",
       "email": "pipi@gmail.com",
       "password": "pipi1234",
@@ -32,7 +30,7 @@
       "favoriteRecipe": null
     },
     {
-      "id": 4,
+      "id": "4",
       "userName": "jere",
       "email": "jere@mail.com",
       "password": "jere1234",
@@ -40,7 +38,7 @@
       "favoriteRecipe": null
     },
     {
-      "id": 5,
+      "id": "5",
       "userName": "marrok",
       "email": "marrok@mail.com",
       "password": "marrok1234",
@@ -48,34 +46,10 @@
       "favoriteRecipe": null
     },
     {
-      "id": 6,
-      "userName": "susi",
-      "email": "susu@gmail.com",
-      "password": "susu1234",
-      "comments": null,
-      "favoriteRecipe": null
-    },
-    {
-      "id": 7,
-      "userName": "lotar",
-      "email": "lotar@gmail.com",
-      "password": "lotar1234",
-      "comments": null,
-      "favoriteRecipe": null
-    },
-    {
-      "id": 8,
-      "userName": "rere",
-      "email": "rere@gmail.com",
-      "password": "rere1234",
-      "comments": null,
-      "favoriteRecipe": null
-    },
-    {
-      "id": 9,
-      "userName": "pepepe",
-      "email": "pepepe@gmail.com",
-      "password": "pepe1234",
+      "id": "6",
+      "userName": "caro",
+      "email": "caro@gmail.com",
+      "password": "caro1234",
       "comments": null,
       "favoriteRecipe": null
     }
@@ -98,8 +72,7 @@
       "image": "../../assets/images/Recetas/pizza.jpg",
       "url": "https://www.recetasgratis.net/receta-de-pizza-casera-31391.html",
       "comments": [
-        2,
-        3
+        2
       ]
     },
     {
@@ -109,8 +82,7 @@
       "image": "../../assets/images/Recetas/flan.jpg",
       "url": "https://www.paulinacocina.net/flan-casero-clasico/13997",
       "comments": [
-        3,
-        1
+        3
       ]
     },
     {
@@ -148,8 +120,10 @@
       "name": "WOK DE LOMO",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit voluptates dolore voluptate, quis",
       "image": "../../assets/images/Recetas/wokLomo.jpg",
-      "url": "https://elgourmet.com/recetas/wok-de-lomo/",
-      "comments": []
+      "comments": [
+        7
+      ]
+
     },
     {
       "id": "8",
@@ -158,7 +132,7 @@
       "image": "../../assets/images/Recetas/chocotorta.jpg",
       "url": "https://www.paulinacocina.net/receta-chocotorta-original/21722",
       "comments": [
-        1
+        8
       ]
     },
     {
@@ -168,52 +142,73 @@
       "image": "../../assets/images/Recetas/tiramisu.jpg",
       "url": "https://www.gourmet.cl/recetas/tiramisu/",
       "comments": [
-        1
+        9
       ]
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "users": [
         2
       ],
-      "text": "UNO"
+      "text": "muy ricos canelones"
     },
     {
-      "id": 2,
+      "id": "2",
       "users": [
         3
       ],
-      "text": "DOS"
+      "text": "Muy rica pizza"
     },
     {
-      "id": 3,
+      "id": "3",
       "users": [
         4
       ],
-      "text": "TRES"
+      "text": "muy rico flan"
     },
     {
-      "id": 4,
+      "id": "4",
       "users": [
         4
       ],
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "Muy ricos panqueques"
     },
     {
-      "id": 5,
+      "id": "5",
       "users": [
         6
       ],
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "muy rica sopa"
     },
     {
-      "id": 6,
+      "id": "6",
       "users": [
         7
       ],
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reprehenderit recusandae, hic optio labore dignissimos minus aspernatur maxime at, veniam fugiat. Dolor, beatae! Itaque neque voluptates dolore voluptate, quis u"
+      "text": "muy rico arroz"
+    },
+    {
+      "id": "7",
+      "users": [
+        7
+      ],
+      "text": "muy rico wok"
+    },
+    {
+      "id": "8",
+      "users": [
+        7
+      ],
+      "text": "muy rica chocotorta"
+    },
+    {
+      "id": "9",
+      "users": [
+        7
+      ],
+      "text": "muy rico tiramisu"
     }
   ]
 }

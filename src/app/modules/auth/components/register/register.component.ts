@@ -50,8 +50,11 @@ export class RegisterComponent implements OnInit{
     this.userReg.password = this.userForm.value.password;
     console.log(this.getLastId());
     this.emitCharacter();
-    this.authService.saveUser(this.userReg).subscribe(response=> {
+
+   this.authService.saveUser(this.userReg).subscribe(response=> {
+    this.userForm.reset();
     this.router.navigate(['auth/login']);
+
    },error =>{
     console.log('error');
    } )
@@ -75,9 +78,5 @@ export class RegisterComponent implements OnInit{
   
     
   }          
-
-
-
-
 
 }

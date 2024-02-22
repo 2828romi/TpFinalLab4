@@ -24,7 +24,9 @@ export class RecipeSearchComponent implements OnInit{
   }
 
   searchByName(recipe: string){
-    this.apiService.getRecipeByName(recipe).subscribe(
+    this.apiService.getRecipeByName(recipe).pipe(
+      debounceTime(1000)
+    ).subscribe(
       data => {
         this.data = data;
       }

@@ -5,25 +5,25 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavBarComponent } from 'src/app/shared/nav-bar/nav-bar.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from "../../shared/shared.module";
+
 
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule, 
-    FormsModule,
-    ReactiveFormsModule,
-    SharedModule
-  ], 
-  exports: [
-    LoginComponent,
-    RegisterComponent
-  ]
+    declarations: [
+        LoginComponent,
+        RegisterComponent
+    ],
+    exports: [
+        LoginComponent,
+        RegisterComponent
+    ],
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        SharedModule
+    ]
 })
 export class AuthModule { }
