@@ -75,7 +75,6 @@ export class JsonRecipeComponent implements OnInit {
           return true;
         }
       }
-
       return false;
    }
 
@@ -88,7 +87,6 @@ export class JsonRecipeComponent implements OnInit {
     }
     return false;
  }
-
 
  getCommentById(idComment: number){
   let commentToReturn!: Comment;
@@ -107,12 +105,7 @@ export class JsonRecipeComponent implements OnInit {
   } 
   return text.text;
  }
-
-
-   
-
-
-   }
+}
 
 
 

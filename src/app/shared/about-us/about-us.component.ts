@@ -14,9 +14,6 @@ export class AboutUsComponent implements OnInit {
   
   }
 
-  constructor( ){}
-
-
   constructor(private router: Router){
 
   }

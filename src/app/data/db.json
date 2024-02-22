@@ -16,10 +16,7 @@
       "comments": [
         2
       ],
-      "favoriteRecipe": [
-        1,
-        2
-      ]
+      "favoriteRecipe": []
     },
     {
       "id": "3",
@@ -27,7 +24,7 @@
       "email": "pipi@gmail.com",
       "password": "pipi1234",
       "comments": null,
-      "favoriteRecipe": null
+      "favoriteRecipe": []
     },
     {
       "id": "4",
@@ -35,7 +32,7 @@
       "email": "jere@mail.com",
       "password": "jere1234",
       "comments": null,
-      "favoriteRecipe": null
+      "favoriteRecipe": []
     },
     {
       "id": "5",
@@ -43,7 +40,7 @@
       "email": "marrok@mail.com",
       "password": "marrok1234",
       "comments": null,
-      "favoriteRecipe": null
+      "favoriteRecipe": []
     },
     {
       "id": "6",
@@ -51,7 +48,72 @@
       "email": "caro@gmail.com",
       "password": "caro1234",
       "comments": null,
-      "favoriteRecipe": null
+      "favoriteRecipe": [
+        7,
+        2,
+        6
+      ]
+    },
+    {
+      "id": "7",
+      "userName": "perro",
+      "email": "perro@gmail.com",
+      "password": "perro1234",
+      "comments": null,
+      "favoriteRecipe": [
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "8",
+      "userName": "gato",
+      "email": "gato@gmail.com",
+      "password": "gato1234",
+      "comments": [],
+      "favoriteRecipe": [
+        7,
+        4
+      ]
+    },
+    {
+      "id": "9",
+      "userName": "loro",
+      "email": "loro@gmail.com",
+      "password": "loro1234",
+      "comments": [],
+      "favoriteRecipe": [
+        7,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 10,
+      "userName": "hamster",
+      "email": "hamster@gmail.com",
+      "password": "hamster123",
+      "comments": null,
+      "favoriteRecipe": []
+    },
+    {
+      "id": 11,
+      "userName": "delfin",
+      "email": "delfin@gmail.com",
+      "password": "delfin1234",
+      "comments": [],
+      "favoriteRecipe": []
+    },
+    {
+      "id": 12,
+      "userName": "coballo",
+      "email": "coballo@gmail.com",
+      "password": "coballo123",
+      "comments": [],
+      "favoriteRecipe": [
+        1
+      ]
     }
   ],
   "recipe": [
@@ -120,10 +182,10 @@
       "name": "WOK DE LOMO",
       "instructions": "Lorem ipsum dolor sit amet consectetur adipisicing elit voluptates dolore voluptate, quis",
       "image": "../../assets/images/Recetas/wokLomo.jpg",
+      "url": "https://elgourmet.com/recetas/wok-de-lomo/",
       "comments": [
         7
       ]
-
     },
     {
       "id": "8",
