@@ -17,7 +17,7 @@ import { userService } from 'src/app/core/services/user.service';
 
 export class RegisterComponent implements OnInit{
 
-  //public formValue: User = new User({id:null});
+  
 
   public userReg: User = new User({});
   users: Array<User> = [];
@@ -50,9 +50,11 @@ export class RegisterComponent implements OnInit{
     this.userReg.password = this.userForm.value.password;
     console.log(this.getLastId());
     this.emitCharacter();
+
    this.authService.saveUser(this.userReg).subscribe(response=> {
     this.userForm.reset();
-    console.log("se guardó");
+    this.router.navigate(['auth/login']);
+
    },error =>{
     console.log('error');
    } )
@@ -76,26 +78,5 @@ export class RegisterComponent implements OnInit{
   
     
   }          
-  
-
-
-/*
-  onSubmit(formValue: any){
-    this.saveUser(formValue)
-  }
-
-  
- public saveUser(user: User){
-    this.apiService.post('/data/db.json', user).subscribe(
-      (response: any) => {console.log('Usuario guardado',response);},
-      (error: any) => {console.log('Error al guardar', error);}
-    );   
-    
-    return console.log(user);
-
-  }
-*/
-
-
 
 }
