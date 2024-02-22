@@ -19,8 +19,8 @@ export class User implements IUser {
     this.userName = user.userName != null ? user.userName : null;
     this.email = user.email != null ? user.email : null;
     this.password = user.password != null ? user.password : null;
-    this.comments = user.comments != null ? user.comments : null;
-    this.favoriteRecipe = user.favoriteRecipe != null ? user.favoriteRecipe : null;
+    this.comments = user.comments != null ? user.comments : [];
+    this.favoriteRecipe = user.favoriteRecipe != null ? user.favoriteRecipe : [];
   }
 
 }

@@ -10,14 +10,12 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class NavBarComponent implements OnInit{
   isLoggedIn = false; 
-  
   @Input() dataInput:any;
 
   constructor(private authService: AuthService, private router: Router) {}
   
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
-    console.log(this.isLoggedIn);
   }
 
   changeRoute(evt: MouseEvent, name: string){
@@ -27,10 +25,6 @@ export class NavBarComponent implements OnInit{
 
   goLogin(){
     this.router.navigate(['auth']);
-  }
-
-  goRegister(){
-    this.router.navigate(['auth/register']);
   }
 
   goSearch(){
@@ -53,6 +47,7 @@ export class NavBarComponent implements OnInit{
   logout(): void {
     this.authService.logout();
     this.router.navigate(['landing']);
+    sessionStorage.removeItem("token");
   }
 
 }
