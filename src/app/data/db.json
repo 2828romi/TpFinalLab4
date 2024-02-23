@@ -90,15 +90,19 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "userName": "hamster",
       "email": "hamster@gmail.com",
       "password": "hamster123",
       "comments": null,
-      "favoriteRecipe": []
+      "favoriteRecipe": [
+        7,
+        5,
+        4
+      ]
     },
     {
-      "id": 11,
+      "id": "11",
       "userName": "delfin",
       "email": "delfin@gmail.com",
       "password": "delfin1234",
@@ -106,7 +110,7 @@
       "favoriteRecipe": []
     },
     {
-      "id": 12,
+      "id": "12",
       "userName": "coballo",
       "email": "coballo@gmail.com",
       "password": "coballo123",
@@ -114,6 +118,14 @@
       "favoriteRecipe": [
         1
       ]
+    },
+    {
+      "id": "13",
+      "userName": "dani",
+      "email": "dani@gmail.com",
+      "password": "dani1234",
+      "comments": [],
+      "favoriteRecipe": []
     }
   ],
   "recipe": [

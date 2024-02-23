@@ -80,13 +80,13 @@ export class JsonRecipeComponent implements OnInit {
 
    public checkRecipe(recipe: Recipe){
     let user = this.getUser();
-    for(let item of user.favoriteRecipe){
-      if(item == recipe.id){
+    if(user != null && user.favoriteRecipe.length > 0){
+      if(user.favoriteRecipe.includes(Number(recipe.id))){
         return true;
       }
     }
     return false;
- }
+  }
 
  getCommentById(idComment: number){
   let commentToReturn!: Comment;
@@ -99,11 +99,12 @@ export class JsonRecipeComponent implements OnInit {
  }
 
  getText(recipe: Recipe){
-  let text!: Comment;
-  if(recipe.comments !== null){
-    text = this.getCommentById(recipe.comments[0]);
+  let text: string = "";
+  if(recipe.comments !== null && recipe.comments.length > 0){
+    let comment = this.getCommentById(recipe.comments[0]);
+    text = comment && comment.text !== null ? comment.text : "";
   } 
-  return text.text;
+  return text;
  }
 }
 
