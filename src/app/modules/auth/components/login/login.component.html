@@ -10,7 +10,7 @@
   
       <div class="mb-3 container ">
         <label class="form-label ">Email</label>
-        <input type="text" formControlName="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input autocomplete="off" type="text" formControlName="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         <span *ngIf="isValidField('email')" class="error-Message"> {{getErrorInField('email')}} </span>
       </div>
   
