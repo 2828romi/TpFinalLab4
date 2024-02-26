@@ -19,7 +19,7 @@
           <label class="col-form-label">Password</label>
         </div>
         <div class="col-auto">
-          <input type="password" formControlName="password"  class="form-control" >
+          <input type="password" formControlName="password"  class="form-control" maxlength="10" minlength="8">
           <span *ngIf="isValidField('password')" class="error-Message"> {{getErrorInField('password')}} </span>
         </div>
         <div class="col-auto">
