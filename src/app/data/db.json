@@ -2,11 +2,14 @@
   "users": [
     {
       "id": "1",
-      "userName": "admin",
-      "email": "admin@gmail.com",
-      "password": "admin123",
+      "userName": "melon",
+      "email": "melon@gmail.com",
+      "password": "melon1234",
       "comments": [],
-      "favoriteRecipe": []
+      "favoriteRecipe": [
+        1,
+        6
+      ]
     },
     {
       "id": "2",
@@ -144,6 +147,14 @@
       "userName": "e",
       "email": "e@mail.com",
       "password": "1111111111",
+      "comments": [],
+      "favoriteRecipe": []
+    },
+    {
+      "id": "15",
+      "userName": "melon",
+      "email": "melon@gmail.com",
+      "password": "melon1234",
       "comments": [],
       "favoriteRecipe": []
     }
