@@ -70,7 +70,6 @@ export class JrecipeService {
     return new Promise<Comment[]>((resolve, reject) => {
 
       this.apiService.getComments().subscribe({
-
         next: data => resolve(data),
         error: error => reject(error)
       })

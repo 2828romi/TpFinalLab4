@@ -62,3 +62,8 @@ input:focus{
     color:var(--colorText);
     box-shadow: 0 5px 15px 5px rgba(243, 243, 243, 0.603);
 }
+
+.error-Message{
+    color: rgba(255, 0, 0, 0.671);
+    font-weight: bold;
+}

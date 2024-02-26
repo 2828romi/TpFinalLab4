@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/core/Models';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -22,18 +23,15 @@ export class LoginComponent implements OnInit {
   public userLogin: User | null= null;
 
   
-
-  constructor(private formB: FormBuilder,private router: Router,private authService: AuthService ) {}
- 
- 
   ngOnInit(): void {}
 
-    loginForm: FormGroup = this.formB.group({
-    email: new FormControl('',[Validators.required,Validators.pattern(this.emailPattern)]),
-    password: new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(10)]),
+  constructor(private formB: FormBuilder,private router: Router,private authService: AuthService,
+                private toastr: ToastrService ) {}
+ 
+  loginForm: FormGroup = this.formB.group({
+  email: new FormControl('',[Validators.required,Validators.pattern(this.emailPattern)]),
+  password: new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(10)]),
   })
-
-
 
   isValidField(field:string): boolean | null{
     return this.loginForm.controls[field].errors && this.loginForm.controls[field].touched;
@@ -50,11 +48,11 @@ export class LoginComponent implements OnInit {
       switch(key){
         case 'required':
           return "Debe completar este campo";
-          case 'minLeng':
-            return `Minimo ${errors['minLength'].requiredLength} caracteres`;
-        case 'maxLength':
-            return `Maximo ${errors['maxLength'].requiredLength} caracteres `;
-        case 'pattern':
+          case 'minlength':
+            return `Minimo ${errors['minlength'].requiredLength} caracteres`;
+        case 'maxlength':
+            return `Maximo ${errors['maxlength'].requiredLength} caracteres `;
+          case 'pattern':
           return 'Formato de email invalido'
       }
     }
@@ -72,7 +70,7 @@ export class LoginComponent implements OnInit {
       else {
         this.email = this.loginForm.value.email;
         this.loginForm.reset({ email: this.email });
-        this.router.navigate(["/auth/register"])
+        this.toastr.error("Revise y vuelva a intentarlo", "Contraseña o email incorrectos");
       }
 
     } catch (error) {

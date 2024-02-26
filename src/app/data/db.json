@@ -125,6 +125,19 @@
       "email": "dani@gmail.com",
       "password": "dani1234",
       "comments": [],
+      "favoriteRecipe": [
+        1,
+        2,
+        7,
+        9
+      ]
+    },
+    {
+      "id": "14",
+      "userName": "e",
+      "email": "e@mail.com",
+      "password": "1111111111",
+      "comments": [],
       "favoriteRecipe": []
     }
   ],
